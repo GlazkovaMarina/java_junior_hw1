@@ -2,9 +2,11 @@ package ru.gb.lesson1.hw;
 
 import ru.gb.lesson1.Streams;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
+import java.util.concurrent.ThreadLocalRandom;
 
 public class Homework {
 
@@ -16,7 +18,7 @@ public class Homework {
    * Вывести на консоль отсортированные (по алфавиту) имена персонов
    */
   public void printNamesOrdered(List<Streams.Person> persons) {
-    // ...
+    persons.stream().map(Streams.Person::getName).sorted().forEach(System.out::println);
   }
 
   /**

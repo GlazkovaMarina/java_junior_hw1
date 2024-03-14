@@ -12,9 +12,6 @@ public class Streams {
 //    Optional<Person> personOpt = Optional.empty();
 //    personOpt.or
 
-
-
-
     List<Department> departments = new ArrayList<>();
     for (int i = 0; i < 10; i++) {
       departments.add(new Department("Department #" + i));
