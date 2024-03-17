@@ -26,6 +26,9 @@ public class Main {
     }
       Homework homework = new Homework();
       homework.printNamesOrdered(persons);
+      System.out.println(homework.findFirstPersons(persons));
+      System.out.println(homework.printDepartmentOldestPerson(persons));
+      System.out.println(homework.findTopDepartment(persons));
   }
 
 }
