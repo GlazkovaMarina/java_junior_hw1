@@ -9,14 +9,6 @@ import java.util.Comparator;
 import java.util.List;
 
 public class TestRunner {
-
-  private void sortTestByOrder(Method first, Method second){
-//    if (first.getParameterAnnotations(). < second.getParameterAnnotations()){
-//
-//    }
-  }
-
-
   public static void run(Class<?> testClass) {
     final Object testObj = initTestObj(testClass);
 
