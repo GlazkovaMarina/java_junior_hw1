@@ -3,6 +3,7 @@ package ru.gb.lesson3;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
+import oracle.jdbc.pool.OracleDataSource;
 
 /**
  * 0. Разобрать код с семниара
@@ -22,7 +23,9 @@ import java.util.List;
 
 public class Homework {
     public static void main(String[] args) {
-        try (Connection connection = DriverManager.getConnection("jdbc:h2:mem:test")){
+        //String url =  "jdbc:postgresql://hostname:port/dbname";
+        String url = "jdbc:h2:mem:test";
+        try (Connection connection = DriverManager.getConnection(url)){
             List<Student> studentsList = new ArrayList<>();
             acceptConnection(connection, studentsList);
         } catch (SQLException e) {
