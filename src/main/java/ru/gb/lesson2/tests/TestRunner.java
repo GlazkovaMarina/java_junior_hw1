@@ -27,7 +27,7 @@ public class TestRunner {
     });
 
     try {
-    testClass.getMethod("beforeAll").invoke(testObj);
+        testClass.getMethod("beforeAll").invoke(testObj);
     } catch (IllegalAccessException | InvocationTargetException | NoSuchMethodException e) {
       throw new RuntimeException(e);
     }

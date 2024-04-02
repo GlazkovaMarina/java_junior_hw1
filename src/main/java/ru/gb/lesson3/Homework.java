@@ -3,7 +3,6 @@ package ru.gb.lesson3;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
-import oracle.jdbc.pool.OracleDataSource;
 
 /**
  * 0. Разобрать код с семниара

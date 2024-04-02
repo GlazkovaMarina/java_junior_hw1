@@ -6,7 +6,7 @@ public class MyTestClass {
     MyTestClass myTestClass = new MyTestClass();
     for (int i = 0; i < 10; i++) {
       RandomIntegerInitializer.init(myTestClass);
-      System.out.println(myTestClass.getValue()); //
+      System.out.println(myTestClass.getValue());
     }
   }
 
