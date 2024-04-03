@@ -4,9 +4,11 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
+import org.hibernate.query.Query;
 import ru.gb.lesson4.Person;
 
-import java.sql.SQLException;
+import java.util.List;
+
 
 public class Homework {
 
@@ -31,6 +33,18 @@ public class Homework {
             findById(sessionFactory, 3L);
             removeStudent(sessionFactory, 10L);
             findById(sessionFactory, 10L);
+            findByAge(sessionFactory, 20L);
+        }
+    }
+
+    private static void findByAge(SessionFactory sessionFactory, long age) {
+        try(Session session = sessionFactory.openSession()){
+            Query<Student> query = session.createQuery("from Student where age > :age", Student.class);
+            query.setParameter("age",age);
+            List<Student> resultList = query.getResultList();
+            for(Student student: resultList){
+                System.out.println(student);
+            }
         }
     }
 
@@ -42,7 +56,7 @@ public class Homework {
                 student.setId(i);
                 student.setFirstName("Student # " + i);
                 student.setSecondName("Student # " + i);
-                student.setAge(20 + i);
+                student.setAge(17 + i);
                 session.persist(student);
             }
             tx.commit();
